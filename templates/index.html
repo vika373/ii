@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Самый лучший в мире чат</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="chat-container">
+  <!-- === Сайдбар === -->
+  <div class="sidebar">
+    <div class="sidebar-header">📑 Мои чаты 📑</div>
+    <div id="chatList" class="chat-list"></div>
+    <button class="new-chat-btn" onclick="newChat()"> Новый чат</button>
+  </div>
+
+  <!-- === Основная часть === -->
+  <div class="chat-area">
+    <!-- История сообщений -->
+    <div id="chatBox"></div>
+
+    <!-- Область ввода -->
+    <div class="input-area">
+      <label class="file-label" for="imageInput" title="Прикрепить изображение">✏️</label>
+      <input type="file" id="imageInput" accept="image/*" hidden>
+
+      <textarea id="msgInput" placeholder="Введите сообщение..." rows="1"></textarea>
+
+      <button id="send-btn" onclick="sendMsg()">➤</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
